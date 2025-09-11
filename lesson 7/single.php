@@ -1,17 +1,24 @@
 <?php get_header(); ?>
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-  <article <?php post_class('single'); ?> id="post-<?php the_ID(); ?>">
-    <h1 class="mb-3"><?php the_title(); ?></h1>
-    <small class="text-muted d-block mb-3">
-      Posted on: <?php the_time('F j, Y'); ?> at <?php the_time('g:i a'); ?>, in <?php the_category(', '); ?>
-    </small>
-    <?php if ( has_post_thumbnail() ) : ?>
-      <div class="thumbnail-img mb-3"><?php the_post_thumbnail('large', array('class'=>'img-fluid rounded')); ?></div>
-    <?php endif; ?>
-    <div class="content"><?php the_content(); ?></div>
-    <?php comments_template(); ?>
-  </article>
-<?php endwhile; endif; ?>
+<?php if ( have_posts() ) : while ( have_posts() ):
+post_class();?>
+    <div class="row">
+        <div class="col-md-8">
+            <article><?php post_class('single'); ?>
+            id="posts-<?php the_ID(); ?>"
 
-<?php get_footer(); ?>
+            <header class="mb-3">
+                <h1 class="mn-1"><?php the_title|(); ?></h1>
+                <small class="text-nyted d-block mb-2">
+
+                Posted on: <?php the_time('F j,Y');?> at 
+                <?php the_time('g:i a'); ?>,
+                in <?php the_category(',')?>
+                <?php
+                $tags_list = get_the_tag_list('<span class="ms-2">Tags: ',',','</span>');
+                if($tags_list){
+                    echo $tags_list;
+                }
+                ?>
+                </small>
+
