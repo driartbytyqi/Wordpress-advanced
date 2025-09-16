@@ -27,3 +27,19 @@ h1 {
   margin: 2rem;
   font-weight: 700;
 }
+.box-rounded{
+  background-color: lightblue;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  border: 2px solid #333;
+  border-radius: 15px;
+}
+.images{
+
+  border-image: url(https://wildjolie.com/cdn/shop/articles/16_Most_Beautiful_Horse_in_the_World.jpg?v=1740021416);
+  
+  border:10px;
+  border-image-slice:10;
+  border-radius:12px;
+}

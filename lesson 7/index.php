@@ -28,10 +28,12 @@
     <?php get_sidebar('primary');?>
   </aside>
 <?php endif; ?>
+<div class="box-round">this box has rounded corners.</div>
+<div class="images">this box has squarecorners.</div>
 
 <?php get_footer(); ?>
 
-<!-- Add your custom jQuery code below -->
+
 <script>
 jQuery(document).ready(function($) {
     // Add a new element after the .my-4 pagination div
