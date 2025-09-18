@@ -43,3 +43,14 @@ h1 {
   border-image-slice:10;
   border-radius:12px;
 }
+.shadow{
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+}
+.inner-shadow{
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: inset 0 0 10px rgb(red, rgb(128, 0, 0), blue);
+  color: white;
+}

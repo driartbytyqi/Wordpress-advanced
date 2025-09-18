@@ -28,8 +28,8 @@
     <?php get_sidebar('primary');?>
   </aside>
 <?php endif; ?>
-<div class="box-round">this box has rounded corners.</div>
-<div class="images">this box has squarecorners.</div>
+<div class="shadox">shadow box.</div>
+<div class="inner-shadow">shadow box</div>
 
 <?php get_footer(); ?>
 
