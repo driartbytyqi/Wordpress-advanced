@@ -35,3 +35,32 @@ function ds_setup() {
   add_theme_support( 'post-formats', array( 'aside', 'image', 'video' ) );
 }
 add_action( 'init', 'ds_setup' );
+
+function mytheme_pagination( $query = null, $args = array() ) {
+    if ( $query instanceof WP_Query ) {
+        $q = $query;
+    } else {
+        global $wp_query;
+        $q = $wp_query;
+    }
+
+    if ( empty( $q->max_num_pages ) || $q->max_num_pages < 2 ) {
+        return;
+    }
+
+    $big = 999999999; // need an unlikely integer
+
+    $defaults = array(
+        'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'format'    => '?paged=%#%',
+        'current'   => max( 1, get_query_var( 'paged' ) ),
+        'total'     => $q->max_num_pages,
+        'prev_text' => __( '« Prev', 'textdomain' ),
+        'next_text' => __( 'Next »', 'textdomain' ),
+        'type'      => 'list',
+    );
+
+    $args = wp_parse_args( $args, $defaults );
+
+    echo paginate_links( $args );
+}
