@@ -64,3 +64,16 @@ function mytheme_pagination( $query = null, $args = array() ) {
 
     echo paginate_links( $args );
 }
+
+function create_post_type() {
+    register_post_type( 'movies',
+        array(
+            '
+            labels' => array(
+                'name' => __(
+                'name' => __( 'Movies' ),
+                'singular_name' => __( 'Movie' )
+            ),
+        )
+    );
+}
