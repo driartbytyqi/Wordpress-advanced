@@ -22,6 +22,10 @@
 <body>
 	<div class="container">
 		<h1>Personal Finance Tracker</h1>
+		<div class="card" style="margin-bottom:2rem; background:#f8f9fa; border-radius:8px; padding:1.5rem; border:1px solid #e2e2e2; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+			<h2 style="margin-top:0;">Why Personal Finances Matter</h2>
+			<p>Managing your personal finances is essential for achieving financial stability and reaching your life goals. By tracking your income and expenses, you gain insight into your spending habits, save more effectively, and make informed decisions about budgeting, investing, and planning for the future. Start today to take control of your financial journey!</p>
+		</div>
 		<form id="expense-form">
 			<input type="text" id="desc" placeholder="Description" required>
 			<input type="number" id="amount" placeholder="Amount" min="0" step="0.01" required>

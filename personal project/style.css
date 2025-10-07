@@ -1,3 +1,44 @@
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #22223b 60%, #4f8cff 100%);
+    padding: 1.2rem 2rem;
+    box-shadow: 0 2px 12px rgba(34,34,59,0.08);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+.site-title h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+.nav-menu li {
+    margin: 0;
+}
+.nav-menu a {
+    color: #fff;
+    font-size: 1.08rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+.nav-menu a:hover {
+    background: #fff;
+    color: #22223b;
+}
 /*
 Theme Name: Personal Finance Tracker
 Theme URI: http://example.com/
@@ -6,6 +47,131 @@ Description: A simple personal finance tracker theme.
 Version: 1.0
 */
 
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+    color: #22223b;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+
+header, footer {
+    background: rgba(34,34,59,0.85);
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(34,34,59,0.08);
+    backdrop-filter: blur(6px);
+}
+
+header h1, footer h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 8px 32px rgba(34,34,59,0.12);
+    border-radius: 18px;
+    padding: 2.5rem;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+h1, h2, h3 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #22223b;
+    margin-top: 0;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(34,34,59,0.08);
+}
+
+
+a {
+    color: #4f8cff;
+    text-decoration: none;
+    transition: color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 0 #4f8cff;
+}
+a:hover {
+    color: #22223b;
+    text-decoration: underline;
+    box-shadow: 0 2px 0 #22223b;
+}
+
+
+button, input[type="submit"] {
+    background: linear-gradient(90deg, #4f8cff 0%, #6a89ff 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 2rem;
+    font-size: 1.08rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(34,34,59,0.08);
+    transition: background 0.2s, transform 0.2s;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+button:hover, input[type="submit"]:hover {
+    background: linear-gradient(90deg, #22223b 0%, #4f8cff 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Card style for sections */
+.card {
+    background: rgba(255,255,255,0.7);
+    border: 1px solid #e2e2e2;
+    border-radius: 14px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 16px rgba(34,34,59,0.07);
+    backdrop-filter: blur(2px);
+    transition: box-shadow 0.2s;
+}
+.card:hover {
+    box-shadow: 0 8px 32px rgba(34,34,59,0.14);
+}
+
+/* Responsive design */
+
+@media (max-width: 600px) {
+    main {
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    header, footer {
+        padding: 1rem 0;
+        border-radius: 0;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .card {
+        padding: 1rem;
+        border-radius: 8px;
+    }
 }
