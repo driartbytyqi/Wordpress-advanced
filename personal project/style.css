@@ -1,177 +1,116 @@
-/* Navbar styles */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(90deg, #22223b 60%, #4f8cff 100%);
-    padding: 1.2rem 2rem;
-    box-shadow: 0 2px 12px rgba(34,34,59,0.08);
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
+.dealership-section {
+    background: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px #e0e7ef;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
 }
-.site-title h1 {
-    color: #fff;
-    margin: 0;
-    font-size: 2rem;
+
+.car-card {
+    background: linear-gradient(135deg, #fff 80%, #e0e7ef 100%);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px #e0e7ef;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 340px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+.car-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 16px 40px #cfd8dc;
+}
+
+.car-card img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px #e0e7ef;
+    margin-bottom: 1rem;
+}
+
+.car-card h3 {
+    margin: 1.2rem 0 0.7rem 0;
+    font-size: 1.4rem;
+    color: #003366;
     font-weight: 700;
-    letter-spacing: 1px;
 }
-.nav-menu {
+
+.car-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.2rem 0;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.car-card a {
+    display: inline-block;
+    background: linear-gradient(90deg, #4f8cff 70%, #003366 100%);
+    color: #fff;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 2px 8px #e0e7ef;
+    transition: background 0.2s;
+}
+
+.car-card span {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: #4f8cff;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 2px 6px #e0e7ef;
+}
+
+nav {
+    width: 100%;
+    background: linear-gradient(90deg, #4f8cff 60%, #003366 100%);
+    padding: 0.7rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 16px #e0e7ef;
+}
+nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     margin: 0;
     padding: 0;
 }
-.nav-menu li {
-    margin: 0;
-}
-.nav-menu a {
+nav a {
     color: #fff;
-    font-size: 1.08rem;
+    text-decoration: none;
+    font-size: 1.15rem;
     font-weight: 500;
-    text-decoration: none;
-    padding: 0.5rem 1.2rem;
-    border-radius: 6px;
-    transition: background 0.2s, color 0.2s;
+    transition: color 0.2s;
 }
-.nav-menu a:hover {
-    background: #fff;
-    color: #22223b;
-}
-/*
-Theme Name: Personal Finance Tracker
-Theme URI: http://example.com/
-Author: Your Name
-Description: A simple personal finance tracker theme.
-Version: 1.0
-*/
-
-
-
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
-    color: #22223b;
-    margin: 0;
-    padding: 0;
-    line-height: 1.7;
-    min-height: 100vh;
+nav a:hover {
+    color: #e0e7ef;
 }
 
-
-header, footer {
-    background: rgba(34,34,59,0.85);
-    color: #fff;
-    padding: 2rem 0;
-    text-align: center;
-    box-shadow: 0 4px 24px rgba(34,34,59,0.08);
-    backdrop-filter: blur(6px);
+/* Responsive grid for car cards */
+@media (max-width: 900px) {
+    .dealership-section {
+        padding: 1rem 0.5rem;
+    }
+    .car-card {
+        max-width: 100%;
+        padding: 1rem;
+    }
 }
-
-header h1, footer h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-
-main {
-    max-width: 900px;
-    margin: 2rem auto;
-    background: rgba(255,255,255,0.85);
-    box-shadow: 0 8px 32px rgba(34,34,59,0.12);
-    border-radius: 18px;
-    padding: 2.5rem;
-    backdrop-filter: blur(4px);
-    animation: fadeIn 0.8s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-
-h1, h2, h3 {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #22223b;
-    margin-top: 0;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 8px rgba(34,34,59,0.08);
-}
-
-
-a {
-    color: #4f8cff;
-    text-decoration: none;
-    transition: color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 1px 0 #4f8cff;
-}
-a:hover {
-    color: #22223b;
-    text-decoration: underline;
-    box-shadow: 0 2px 0 #22223b;
-}
-
-
-button, input[type="submit"] {
-    background: linear-gradient(90deg, #4f8cff 0%, #6a89ff 100%);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 0.8rem 2rem;
-    font-size: 1.08rem;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(34,34,59,0.08);
-    transition: background 0.2s, transform 0.2s;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-button:hover, input[type="submit"]:hover {
-    background: linear-gradient(90deg, #22223b 0%, #4f8cff 100%);
-    transform: translateY(-2px) scale(1.04);
-}
-
-ul {
-    padding-left: 1.5rem;
-}
-
-li {
-    margin-bottom: 0.5rem;
-}
-
-/* Card style for sections */
-.card {
-    background: rgba(255,255,255,0.7);
-    border: 1px solid #e2e2e2;
-    border-radius: 14px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 16px rgba(34,34,59,0.07);
-    backdrop-filter: blur(2px);
-    transition: box-shadow 0.2s;
-}
-.card:hover {
-    box-shadow: 0 8px 32px rgba(34,34,59,0.14);
-}
-
-/* Responsive design */
-
 @media (max-width: 600px) {
-    main {
-        padding: 1rem;
-        border-radius: 8px;
+    nav ul {
+        gap: 1rem;
+        font-size: 1rem;
     }
-    header, footer {
-        padding: 1rem 0;
-        border-radius: 0;
-    }
-    h1 {
-        font-size: 2rem;
-    }
-    .card {
-        padding: 1rem;
-        border-radius: 8px;
+    .dealership-section {
+        padding: 0.5rem 0.2rem;
     }
 }
+

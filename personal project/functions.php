@@ -1,43 +1,29 @@
 <?php
-
-// Register custom post types for About Us, Rate Us, and Profile
-function ppt_register_custom_post_types() {
-	// About Us
-	register_post_type('about_us', array(
-		'labels' => array(
-			'name' => __('About Us'),
-			'singular_name' => __('About Us')
-		),
-		'public' => true,
-		'has_archive' => false,
-		'show_in_menu' => true,
-		'supports' => array('title', 'editor'),
-	));
-
-	// Rate Us
-	register_post_type('rate_us', array(
-		'labels' => array(
-			'name' => __('Rate Us'),
-			'singular_name' => __('Rate Us')
-		),
-		'public' => true,
-		'has_archive' => false,
-		'show_in_menu' => true,
-		'supports' => array('title', 'editor', 'comments'),
-	));
-
-	// Profile
-	register_post_type('profile', array(
-		'labels' => array(
-			'name' => __('Profile'),
-			'singular_name' => __('Profile')
-		),
-		'public' => false,
-		'show_ui' => true,
-		'show_in_menu' => true,
-		'supports' => array('title', 'editor', 'author'),
-	));
+// Register Custom Post Type
+function register_car_post_type() {
+    $labels = array(
+        'name' => 'Cars',
+        'singular_name' => 'Car',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Car',
+        'edit_item' => 'Edit Car',
+        'new_item' => 'New Car',
+        'all_items' => 'All Cars',
+        'view_item' => 'View Car',
+        'search_items' => 'Search Cars',
+        'not_found' => 'No cars found',
+        'not_found_in_trash' => 'No cars found in Trash',
+        'menu_name' => 'Cars'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'cars'),
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'menu_icon' => 'dashicons-car'
+    );
+    register_post_type('car', $args);
 }
-add_action('init', 'ppt_register_custom_post_types');
-
-
+add_action('init', 'register_car_post_type');
+?>
